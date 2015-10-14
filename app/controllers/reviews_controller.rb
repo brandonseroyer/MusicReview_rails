@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = Review.order(params[:sort]).all
+    @reviews = Review.order(params[:sort])
+    @feature = @reviews.sample
   end
 
   def show

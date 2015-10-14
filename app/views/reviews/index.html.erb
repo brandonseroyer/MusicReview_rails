@@ -1,6 +1,10 @@
-<% @reviews.each do |review| %>
+
+<% for review in @reviews %>
   <%= link_to review.title, review_path(review) %>
   <br>
 <% end %>
 <br>
 <%= link_to 'New Review', new_review_path %>
+
+<%= link_to 'Sort By Alphabetical', :sort => "lower(title)" %>
+<%= link_to 'Sort By Date Added', :sort => "(created_at)" %>

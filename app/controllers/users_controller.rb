@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    @reviews = Review.all
+    @reviews = Review.order(params[:sort])
   end
 
   def show

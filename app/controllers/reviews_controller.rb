@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = Review.all
+    @reviews = Review.order(params[:sort]).all
   end
 
   def show
@@ -25,6 +25,19 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
     redirect_to reviews_path
+  end
+
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      redirect_to review_path(@review)
+    else
+      render :edit
+    end
   end
 
 private

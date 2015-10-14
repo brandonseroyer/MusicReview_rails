@@ -3,4 +3,10 @@ Rails.application.routes.draw do
   resources :reviews do
     resources :users
   end
+
+  resources :reviews do
+    resources :comments
+  end
+
+
 end

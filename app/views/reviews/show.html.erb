@@ -6,6 +6,10 @@
   <%= @review.genre %>
 </p>
 <br>
+<% @comments.each do |comment| %>
+  <%= comment.content %>
+<% end %>
+<%= link_to 'Add comment', new_review_comment_path(@review) %>
 <%= link_to 'Delete Review', review_path(@review),
                               :data => {:confirm => "you sure?"},
                               :method => "delete" %>

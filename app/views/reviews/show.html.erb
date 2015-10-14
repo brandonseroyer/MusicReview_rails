@@ -4,3 +4,7 @@
 <p>
   <%= @review.content %>
 </p>
+<br>
+<%= link_to 'Delete Review', review_path(@review),
+                              :data => {:confirm => "you sure?"},
+                              :method => "delete" %>

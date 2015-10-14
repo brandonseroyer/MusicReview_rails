@@ -1,7 +1,12 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = Review.order(params[:sort])
-    @feature = @reviews.sample
+
+    if params[:search]
+      @reviews = Review.search(params[:search])
+    else
+      @reviews = Review.order(params[:sort])
+      @feature = @reviews.sample
+    end
   end
 
   def show
@@ -15,6 +20,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+
     if @review.save
       redirect_to reviews_path
     else
@@ -34,6 +40,7 @@ class ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:id])
+    # binding.pry
     if @review.update(review_params)
       redirect_to review_path(@review)
     else
@@ -43,7 +50,7 @@ class ReviewsController < ApplicationController
 
 private
   def review_params
-    params.require(:review).permit(:title, :content, :user_id)
+    params.require(:review).permit(:title, :content, :user_id, :genre)
   end
 
 end

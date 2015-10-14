@@ -8,7 +8,15 @@
 
 <%= link_to 'Sort By Alphabetical', :sort => "lower(title)" %>
 <%= link_to 'Sort By Date Added', :sort => "(created_at)" %>
+<br><br>
+<%= form_tag(reviews_path, :method => 'get', id: 'search-form') do %>
+  <%= text_field_tag :search, params[:search], placeholder: 'search' %>
+  <button type="submit">Search!</button>
+  <% end %>
+
 
 
 <h1>Featured Work</h1>
-<%= link_to @feature.title, review_path(@feature) %>
+<!--
+
+Review.find(:all, :conditions => { :genre => [input]}) -->

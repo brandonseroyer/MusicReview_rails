@@ -4,6 +4,9 @@
 <p>
   <%= @review.content %><br>
   <%= @review.genre %>
+  <br>
+  <p>Average Rating:</p>
+  <%= @review.average_rating %>
 </p>
 <br>
 <h3>Comments:</h3>
@@ -16,6 +19,7 @@
 <% end %>
 <br><br>
 <%= link_to 'Add comment', new_review_comment_path(@review) %>
+<%= link_to 'Add Rating', new_review_rating_path(@review) %>
 <%= link_to 'Delete Review', review_path(@review),
                               :data => {:confirm => "you sure?"},
                               :method => "delete" %>

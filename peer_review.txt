@@ -1,0 +1,31 @@
+Is the Github documentation - commits and README - thorough and descriptive?
+- the commits are perfectly formatted
+- the ReadMe is clear but incomplete (ie - legal, names, technology, etc)
+
+Is there good spec coverage?
+- There could be more specs given the functionality of the site -- integration specs not present
+
+Do all specs pass?
+- No, one spec is currently failing, and another is pending
+
+Is the application logic clear and easy to navigate?
+- Yes
+
+Is the site user-friendly?
+- Yes, the site is easy to use and allows users to interact
+
+Are there opportunities for refactoring?
+- Not that I see, his methods are concisely written.
+
+What features stand out?
+- Everything seems to function well and the site has a lot of features for the time given.  I like the ability for users to comment,
+also the genre dropdown and ability to sort by genre is cool. The site automatically averaging user ratings is also very impressive, along with having
+a featured review section on the homepage.
+
+What features could be improved?
+- The site won't launch unless it has existing content, so that needs to be cleaned up.  There should be separate fields for Artist and Album, probably separate ratings for each too,
+unless this sites purpose is just to review artists generally.  The rating system is a bit confusing too, currently the users can rate an artist from a range of -9999 to 9999.
+I think something like 1-5 would make much more sense, also instructions should be given.
+
+Do you have any additional constructive criticism or positive feedback to share?
+- You rock, Bunk the Hunk! Super impressive -- Great job, man!

@@ -14,7 +14,6 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @comments = @review.comments
     @ratings = @review.ratings
-    # @user = User.find(params[:id])
   end
 
   def new
@@ -25,6 +24,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     if @review.save
+      flash[:notice] = "Review successfully added!"
       redirect_to reviews_path
     else
       render :new

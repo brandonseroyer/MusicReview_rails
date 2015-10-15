@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     @review = Review.find(params[:review_id])
     @comment = @review.comments.new(comment_params)
     if @comment.save
+      flash[:notice] = "Comment successfully added!"
       redirect_to review_path(@review)
     else
       render :new

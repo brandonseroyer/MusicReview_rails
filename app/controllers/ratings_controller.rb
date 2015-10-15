@@ -8,6 +8,7 @@ class RatingsController < ApplicationController
     @review = Review.find(params[:review_id])
     @rating = @review.ratings.new(rating_params)
     if @rating.save
+      flash[:notice] = "Rating successfully added!"
       redirect_to review_path(@review)
     else
       render :new

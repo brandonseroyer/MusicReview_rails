@@ -1,25 +1,24 @@
-<legend>
+<center><legend>
   <h1>Music Reviews</h1>
   <%= link_to 'Sort By Alphabetical', :sort => "lower(title)" %> ||
   <%= link_to 'Sort By Date Added', :sort => "(created_at)" %>
+  <br><br>
+</legend></center>
+<center><% for review in @reviews %>
+  <h3><%= link_to review.title, review_path(review) %></h3>
   <br>
-</legend>
-<% for review in @reviews %>
-  <%= link_to review.title, review_path(review) %>
-  <br>
-<% end %>
-<br>
-<%= link_to 'New Review', new_review_path %>
-
-
-<br><br>
-<%= form_tag(reviews_path, :method => 'get', id: 'search-form') do %>
+<% end %></center>
+<hr>
+<center><%= form_tag(reviews_path, :method => 'get', id: 'search-form') do %>
   <%= select_tag(:genre, options_for_select(["Select Genre", "hip-hop/rap", "rock", "classical", "electronic", "alternative", "indie", "pop"]), selected: :genre) %>
   <button type="submit">Filter Review by Genre!</button>
   <% end %>
-  <%= link_to "All genres", reviews_path %>
+  <%= link_to "All genres", reviews_path %></center>
 
 
 
 <h1>Featured Review</h1>
-<%= link_to @feature.title, review_path(@feature) %>
+<h3><%= link_to @feature.title, review_path(@feature) %></h3>
+<hr>
+<h3>Submit a Review</h3>
+<%= link_to 'New Review', new_review_path %>

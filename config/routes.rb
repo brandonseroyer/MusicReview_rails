@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   root to: 'reviews#index'
-  resources :reviews do
-    resources :users
-  end
+  resources :reviews 
 
   resources :reviews do
     resources :comments

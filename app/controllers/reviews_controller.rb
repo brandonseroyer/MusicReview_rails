@@ -1,8 +1,9 @@
 class ReviewsController < ApplicationController
   def index
 
-    if params[:search]
-      @reviews = Review.search(params[:search])
+    if params[:genre]
+      @reviews = Review.search(params[:genre])
+      @feature = Review.all.sample
     else
       @reviews = Review.order(params[:sort])
       @feature = @reviews.sample

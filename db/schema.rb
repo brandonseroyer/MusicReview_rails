@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20151014220512) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "rating"
     t.integer  "ratings",    array: true
     t.string   "genre"
   end

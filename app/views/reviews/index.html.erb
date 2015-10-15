@@ -1,4 +1,9 @@
-
+<legend>
+  <h1>Music Reviews</h1>
+  <%= link_to 'Sort By Alphabetical', :sort => "lower(title)" %> ||
+  <%= link_to 'Sort By Date Added', :sort => "(created_at)" %>
+  <br>
+</legend>
 <% for review in @reviews %>
   <%= link_to review.title, review_path(review) %>
   <br>
@@ -6,17 +11,15 @@
 <br>
 <%= link_to 'New Review', new_review_path %>
 
-<%= link_to 'Sort By Alphabetical', :sort => "lower(title)" %>
-<%= link_to 'Sort By Date Added', :sort => "(created_at)" %>
+
 <br><br>
 <%= form_tag(reviews_path, :method => 'get', id: 'search-form') do %>
-  <%= text_field_tag :search, params[:search], placeholder: 'search by genre' %>
-  <button type="submit">Search Review by Genre!</button>
+  <%= select_tag(:genre, options_for_select(["Select Genre", "hip-hop/rap", "rock", "classical", "electronic", "alternative", "indie", "pop"]), selected: :genre) %>
+  <button type="submit">Filter Review by Genre!</button>
   <% end %>
+  <%= link_to "All genres", reviews_path %>
 
 
 
-<h1>Featured Work</h1>
-<!--
-
-Review.find(:all, :conditions => { :genre => [input]}) -->
+<h1>Featured Review</h1>
+<%= link_to @feature.title, review_path(@feature) %>

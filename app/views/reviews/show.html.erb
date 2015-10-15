@@ -1,11 +1,13 @@
-<h1><%= @review.title %></h1>
-<br>
-<br>
+<legend><h1><%= @review.title %></h1></legend>
+
 <p>
-  <%= @review.content %><br>
+  <div class="review-content">
+    <%= @review.content %>
+  </div>
+  <h4>Genre</h4>
   <%= @review.genre %>
-  <br>
-  <p>Average Rating:</p>
+  <hr>
+  <strong><p>This Review's Average Rating:</p></strong>
   <%= @review.average_rating %>
 </p>
 <br>
@@ -18,9 +20,10 @@
   <br>
 <% end %>
 <br><br>
-<%= link_to 'Add comment', new_review_comment_path(@review) %>
-<%= link_to 'Add Rating', new_review_rating_path(@review) %>
+<%= link_to 'Add comment', new_review_comment_path(@review) %><br>
+<%= link_to 'Add Rating', new_review_rating_path(@review) %><br>
 <%= link_to 'Delete Review', review_path(@review),
                               :data => {:confirm => "you sure?"},
-                              :method => "delete" %>
-<%= link_to 'Edit Review', edit_review_path(@review) %>
+                              :method => "delete" %><br>
+<%= link_to 'Edit Review', edit_review_path(@review) %><br><br>
+<%= link_to 'All Reviews', reviews_path %>

@@ -15,7 +15,9 @@ class Review < ActiveRecord::Base
     self.ratings.each do |rating|
       sum += rating.score
     end
-    return sum/score_length
+    if score_length != 0
+      return (sum/score_length).to_f
+    end
   end
 
 end

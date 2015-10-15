@@ -1,9 +1,9 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Created using ruby v. 2.2.0, rails v. 4.2.4, postgres, MYsql and bootstrap.
 
-Things you may want to cover:
+
+* To use locally follow these instructions.
 
 * Clone Repo to local drive
 
